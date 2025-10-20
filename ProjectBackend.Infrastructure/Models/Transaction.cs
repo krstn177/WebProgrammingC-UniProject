@@ -14,12 +14,11 @@ namespace ProjectBackend.Infrastructure.Models
         Transfer,
         Payment
     }
-    public class Transaction
+    public class Transaction : BaseEntity
     {
         [Column(TypeName = "decimal(18,2)")]
         public decimal Amount { get; set; }
         public string Description { get; set; } = string.Empty;
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public TransactionType Type { get; set; }
 
         // Nullable sender/receiver
